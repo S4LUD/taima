@@ -66,6 +66,13 @@
             ._wrap_data {
               padding: 10px 20px;
               font-size: 14px;
+              ._tag {
+                padding: 3px 5px;
+                border: 1px solid #ececec;
+                font-size: 12px;
+                border-radius: 5px;
+                width: max-content;
+              }
               ._status {
                 border: 1px solid #ececec;
                 border-radius: 5px;

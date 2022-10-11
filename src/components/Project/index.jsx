@@ -48,7 +48,9 @@ export default function Project(params) {
                     James Robert Aldave Salud
                   </div>
                 </td>
-                <td className={ProjectCSS._wrap_data}>Discord Bot</td>
+                <td className={ProjectCSS._wrap_data}>
+                  <div className={ProjectCSS._tag}>Discord Bot</div>
+                </td>
                 <td className={ProjectCSS._wrap_data}>183</td>
                 <td className={ProjectCSS._wrap_data}>Oct 11, 2022</td>
               </tr>
@@ -69,7 +71,9 @@ export default function Project(params) {
                     Lance Ivan Salud
                   </div>
                 </td>
-                <td className={ProjectCSS._wrap_data}>NFT</td>
+                <td className={ProjectCSS._wrap_data}>
+                  <div className={ProjectCSS._tag}>NFT</div>
+                </td>
                 <td className={ProjectCSS._wrap_data}>351</td>
                 <td className={ProjectCSS._wrap_data}>Oct 11, 2022</td>
               </tr>
