@@ -1,9 +1,41 @@
 @import "../../assets//style/variables";
 
-.container {
+._project_container {
   padding-top: 72px;
-  .test {
-    // background: palegreen;
+  ._wrap_project {
     padding: 20px;
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      padding: 20px 10px;
+    }
+    ._wrap_search {
+      height: 45px;
+      margin: 0 10px;
+      display: flex;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      transition: border 150ms ease-in-out;
+      &:focus-within {
+        border: 1px solid #51acfa;
+      }
+      ._input {
+        display: flex;
+        width: 100%;
+        input[type="text"] {
+          width: 100%;
+          padding: 10px 10px 10px 0;
+          outline: none;
+          border: none;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+      ._search_icon {
+        display: flex;
+        align-items: center;
+        padding: 0 10px 0 10px;
+      }
+    }
   }
 }

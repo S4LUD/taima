@@ -1,6 +1,7 @@
 @import "../../assets/style/variables";
 
-._container {
+._header_container {
+  z-index: 999999;
   padding: 0 20px;
   position: fixed;
   width: 100%;
@@ -82,7 +83,6 @@
       }
       ._drop_menu {
         position: absolute;
-        display: none;
         background: #ffffff;
         border: 1px solid #ececec;
         right: 0;
@@ -91,6 +91,11 @@
         margin: 8px;
         padding: 6px;
         box-shadow: 0 0px 10px 0 hsla(0, 0%, 0%, 0.051);
+        //new style
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 100ms ease-in-out;
         ._wrap_mobile_menu {
           display: none;
           flex-direction: column;
@@ -105,6 +110,7 @@
           margin: 5px 0;
         }
         ._wrap_inside_profile {
+          cursor: pointer;
           display: flex;
           align-items: center;
           gap: 10px;
@@ -136,7 +142,9 @@
         }
       }
       ._active_menu {
-        display: block;
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0px);
       }
     }
   }

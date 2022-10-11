@@ -43,7 +43,7 @@ export default function Header() {
   });
 
   return (
-    <div className={HeaderCSS._container}>
+    <div className={HeaderCSS._header_container}>
       <div className={HeaderCSS._wrap_a}>
         <div className={HeaderCSS._logo}>TAIMA</div>
         <div className={HeaderCSS._wrap_btn}>
