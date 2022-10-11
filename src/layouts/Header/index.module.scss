@@ -124,6 +124,12 @@
           padding: 10px;
           border-radius: 5px;
           cursor: pointer;
+          display: flex;
+          gap: 10px;
+          ._btn_icon {
+            display: flex;
+            align-items: center;
+          }
           &:hover {
             background: #f8f8f8;
           }

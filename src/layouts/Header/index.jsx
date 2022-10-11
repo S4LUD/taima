@@ -4,6 +4,12 @@ import {
   AiOutlineMessage,
   AiOutlineNotification,
   IoIosArrowDown,
+  AiOutlineProject,
+  BsListTask,
+  FiUsers,
+  AiOutlineFieldTime,
+  FiSettings,
+  BiLogOut,
 } from "react-icons/all";
 import HeaderCSS from "./index.module.scss";
 import Profile from "../../assets/image/profile.jpg";
@@ -83,14 +89,44 @@ export default function Header() {
             </div>
             <div className={HeaderCSS._line} />
             <div className={HeaderCSS._wrap_mobile_menu}>
-              <div className={HeaderCSS._btn}>Project</div>
-              <div className={HeaderCSS._btn}>Task</div>
-              <div className={HeaderCSS._btn}>Member</div>
-              <div className={HeaderCSS._btn}>Time Tracking</div>
+              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+                <div className={HeaderCSS._btn_icon}>
+                  <AiOutlineProject size={20} />
+                </div>
+                Project
+              </div>
+              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+                <div className={HeaderCSS._btn_icon}>
+                  <BsListTask size={20} />
+                </div>
+                Task
+              </div>
+              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+                <div className={HeaderCSS._btn_icon}>
+                  <FiUsers size={20} />
+                </div>
+                Member
+              </div>
+              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+                <div className={HeaderCSS._btn_icon}>
+                  <AiOutlineFieldTime size={20} />
+                </div>
+                Time Tracking
+              </div>
               <div className={HeaderCSS._line} />
             </div>
-            <div className={HeaderCSS._btn}>Settings</div>
-            <div className={HeaderCSS._btn}>Logout</div>
+            <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+              <div className={HeaderCSS._btn_icon}>
+                <FiSettings size={20} />
+              </div>
+              Settings
+            </div>
+            <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
+              <div className={HeaderCSS._btn_icon}>
+                <BiLogOut size={20} />
+              </div>
+              Logout
+            </div>
           </div>
         </div>
       </div>
