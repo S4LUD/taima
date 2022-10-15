@@ -1,17 +1,27 @@
 import ProjectCSS from "./index.module.scss";
-import { AiOutlineSearch, GoPrimitiveDot } from "react-icons/all";
+import {
+  AiOutlineSearch,
+  GoPrimitiveDot,
+  AiOutlinePlus,
+} from "react-icons/all";
 
 export default function Project(params) {
   return (
     <div className={ProjectCSS._project_container}>
       <div className={ProjectCSS._wrap_project}>
         <div className={ProjectCSS._title}>Project List</div>
-        <div className={ProjectCSS._wrap_search}>
-          <div className={ProjectCSS._search_icon}>
-            <AiOutlineSearch size={20} color="#b4b4b4" />
+        <div className={ProjectCSS._wrap_menu}>
+          <div className={ProjectCSS._wrap_search}>
+            <div className={ProjectCSS._search_icon}>
+              <AiOutlineSearch size={20} color="#b4b4b4" />
+            </div>
+            <div className={ProjectCSS._input}>
+              <input type="text" placeholder="Search" autoComplete="off" />
+            </div>
           </div>
-          <div className={ProjectCSS._input}>
-            <input type="text" placeholder="Search" autoComplete="off" />
+          <div className={ProjectCSS._add_icon}>
+            <AiOutlinePlus size={20} color="#ffffff" />
+            <span>New Project</span>
           </div>
         </div>
         <div className={ProjectCSS._wrap_table}>
