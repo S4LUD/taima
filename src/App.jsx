@@ -7,13 +7,14 @@ import {
 } from "react-router-dom";
 import Project from "./components/Project";
 import Main from "./layouts/Main";
+import TimeTracking from "./components/Time-Tracking";
 
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Main />}>
         <Route index element={<Project />} />
-        <Route path=":project" element={<Project />} />
+        <Route path="time-tracking" element={<TimeTracking />} />
         {/* <Route path="time-tracking" element={<TimeTracking />} />
         <Route path="workspace" element={<Workspace />}>
           <Route path="task" element={<Task />} />

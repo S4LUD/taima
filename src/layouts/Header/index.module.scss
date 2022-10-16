@@ -34,6 +34,7 @@
         cursor: pointer;
         border-bottom: 2px solid transparent;
         font-weight: 500;
+        color: #000000;
       }
       .btn_border {
         color: #51acfa;
@@ -52,16 +53,46 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    ._wrap_notification {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      ._wrap_notif {
+    ._wrap_add {
+      position: relative;
+      ._wrap_add_drop_menu {
+        position: absolute;
+        background: #ffffff;
+        border: 1px solid #ececec;
+        right: -8px;
+        min-width: 150px;
+        border-radius: 5px;
+        margin: 8px;
+        padding: 6px;
+        box-shadow: 0 0px 10px 0 hsla(0, 0%, 0%, 0.051);
+        //new style
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 100ms ease-in-out;
+      }
+      ._w_a_d_m_active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0px);
+      }
+      ._wrap_btn_add {
+        user-select: none;
         cursor: pointer;
-        color: #51acfa;
+        color: #ffffff;
+        background: #2176c0;
+        border-radius: 5px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 5px;
+        height: 40px;
+        padding: 5px 10px 5px 10px;
+        ._title_plus {
+          font-size: 20px;
+          font-weight: 400;
+        }
       }
     }
     ._profile {
@@ -85,7 +116,7 @@
         position: absolute;
         background: #ffffff;
         border: 1px solid #ececec;
-        right: 0;
+        right: -8px;
         min-width: 270px;
         border-radius: 5px;
         margin: 8px;

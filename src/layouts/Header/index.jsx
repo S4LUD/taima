@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import {
   AiOutlineMessage,
   AiOutlineNotification,
@@ -34,12 +34,37 @@ const useClickOutside = (handler) => {
   return menuRef;
 };
 
+const useClickOutsideNew = (handlerd) => {
+  const addRef = useRef();
+
+  useEffect(() => {
+    const mybeHandler = (event) => {
+      if (!addRef.current.contains(event.target)) {
+        handlerd();
+      }
+    };
+
+    document.addEventListener("mousedown", mybeHandler);
+
+    return () => {
+      document.removeEventListener("mousedown", mybeHandler);
+    };
+  }, []);
+
+  return addRef;
+};
+
 export default function Header() {
   const location = useLocation();
   const [isToggle, setToggle] = useState(false);
+  const [isToggleNew, setToggleNew] = useState(false);
 
   const Untoggle = useClickOutside(() => {
     setToggle(false);
+  });
+
+  const UntoggleNew = useClickOutsideNew(() => {
+    setToggleNew(false);
   });
 
   return (
@@ -47,25 +72,44 @@ export default function Header() {
       <div className={HeaderCSS._wrap_a}>
         <div className={HeaderCSS._logo}>TAIMA</div>
         <div className={HeaderCSS._wrap_btn}>
-          <div
-            className={`${HeaderCSS._btn} ${
-              location.pathname === "/" && HeaderCSS.btn_border
-            }`}
-          >
-            Project
-          </div>
-          <div className={HeaderCSS._btn}>Task</div>
+          <Link to="/">
+            <div
+              className={`${HeaderCSS._btn} ${
+                location.pathname === "/" && HeaderCSS.btn_border
+              }`}
+            >
+              Project
+            </div>
+          </Link>
+          <Link to="time-tracking">
+            <div
+              className={`${HeaderCSS._btn} ${
+                location.pathname === "/time-tracking" && HeaderCSS.btn_border
+              }`}
+            >
+              Task
+            </div>
+          </Link>
           <div className={HeaderCSS._btn}>Time Tracking</div>
           <div className={HeaderCSS._btn}>Member</div>
         </div>
       </div>
       <div className={HeaderCSS._wrap_b}>
-        <div className={HeaderCSS._wrap_notification}>
-          <div className={HeaderCSS._wrap_notif}>
-            <AiOutlineMessage size={24} />
+        <div className={HeaderCSS._wrap_add} ref={UntoggleNew}>
+          <div
+            className={HeaderCSS._wrap_btn_add}
+            onClick={() => setToggleNew(!isToggleNew)}
+          >
+            <span className={HeaderCSS._title_plus}>+</span>
+            <div>New</div>
           </div>
-          <div className={HeaderCSS._wrap_notif}>
-            <AiOutlineNotification size={24} />
+          <div
+            className={`${HeaderCSS._wrap_add_drop_menu} ${
+              isToggleNew && HeaderCSS._w_a_d_m_active
+            }`}
+          >
+            <div className="_w_a_d_m_btn">Project</div>
+            <div className="_w_a_d_m_btn">Task</div>
           </div>
         </div>
         <div className={HeaderCSS._profile} ref={Untoggle}>
