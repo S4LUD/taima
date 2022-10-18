@@ -8,12 +8,14 @@ import {
 import Project from "./components/Project";
 import Main from "./layouts/Main";
 import TimeTracking from "./components/Time-Tracking";
+import Dashboard from "./components/Dashboard";
 
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Main />}>
-        <Route index element={<Project />} />
+        <Route index element={<Dashboard />} />
+        <Route path="project" element={<Project />} />
         <Route path="time-tracking" element={<TimeTracking />} />
         {/* <Route path="time-tracking" element={<TimeTracking />} />
         <Route path="workspace" element={<Workspace />}>

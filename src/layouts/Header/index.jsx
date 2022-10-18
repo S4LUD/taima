@@ -1,15 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import {
-  AiOutlineMessage,
-  AiOutlineNotification,
   IoIosArrowDown,
   AiOutlineProject,
   BsListTask,
-  FiUsers,
-  AiOutlineFieldTime,
+  MdDashboard,
   FiSettings,
   BiLogOut,
+  MdOutlineWorkspaces,
 } from "react-icons/all";
 import HeaderCSS from "./index.module.scss";
 import Profile from "../../assets/image/profile.jpg";
@@ -72,26 +70,20 @@ export default function Header() {
       <div className={HeaderCSS._wrap_a}>
         <div className={HeaderCSS._logo}>TAIMA</div>
         <div className={HeaderCSS._wrap_btn}>
-          <Link to="/">
-            <div
-              className={`${HeaderCSS._btn} ${
-                location.pathname === "/" && HeaderCSS.btn_border
-              }`}
-            >
-              Project
-            </div>
-          </Link>
-          <Link to="time-tracking">
-            <div
-              className={`${HeaderCSS._btn} ${
-                location.pathname === "/time-tracking" && HeaderCSS.btn_border
-              }`}
-            >
-              Task
-            </div>
-          </Link>
-          <div className={HeaderCSS._btn}>Time Tracking</div>
-          <div className={HeaderCSS._btn}>Member</div>
+          <div
+            className={`${HeaderCSS._btn} ${
+              location.pathname === "/" && HeaderCSS.btn_border
+            }`}
+          >
+            Dashboard
+          </div>
+          <div
+            className={`${HeaderCSS._btn} ${
+              location.pathname === "/project" && HeaderCSS.btn_border
+            }`}
+          >
+            Workspace
+          </div>
         </div>
       </div>
       <div className={HeaderCSS._wrap_b}>
@@ -108,8 +100,14 @@ export default function Header() {
               isToggleNew && HeaderCSS._w_a_d_m_active
             }`}
           >
-            <div className="_w_a_d_m_btn">Project</div>
-            <div className="_w_a_d_m_btn">Task</div>
+            <div className={HeaderCSS._w_a_d_m_btn}>
+              <AiOutlineProject size={20} />
+              Project
+            </div>
+            <div className={HeaderCSS._w_a_d_m_btn}>
+              <BsListTask size={20} />
+              Task
+            </div>
           </div>
         </div>
         <div className={HeaderCSS._profile} ref={Untoggle}>
@@ -135,27 +133,15 @@ export default function Header() {
             <div className={HeaderCSS._wrap_mobile_menu}>
               <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
                 <div className={HeaderCSS._btn_icon}>
-                  <AiOutlineProject size={20} />
+                  <MdDashboard size={20} />
                 </div>
-                Project
+                Dashboard
               </div>
               <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
                 <div className={HeaderCSS._btn_icon}>
-                  <BsListTask size={20} />
+                  <MdOutlineWorkspaces size={20} />
                 </div>
-                Task
-              </div>
-              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
-                <div className={HeaderCSS._btn_icon}>
-                  <FiUsers size={20} />
-                </div>
-                Member
-              </div>
-              <div className={`${HeaderCSS._btn} ${HeaderCSS._wrap_btn}`}>
-                <div className={HeaderCSS._btn_icon}>
-                  <AiOutlineFieldTime size={20} />
-                </div>
-                Time Tracking
+                Workspace
               </div>
               <div className={HeaderCSS._line} />
             </div>
