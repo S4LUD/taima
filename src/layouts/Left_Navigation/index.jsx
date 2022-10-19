@@ -10,23 +10,45 @@ import {
 export default function Left_Navigtaion() {
   const [isToggle, setToggle] = useState(true);
 
-  const mediaQuery = window.matchMedia("(min-width: 990px)");
-  const [query, setQuery] = useState(mediaQuery);
-  const [expanded, setExpanded] = useState(query.matches);
+  // const mediaQuery = window.matchMedia("(min-width: 990px)");
+
+  // const [query, setQuery] = useState(mediaQuery);
+  // const [expanded, setExpanded] = useState(query.matches);
+
+  // useEffect(() => {
+  //   mediaQuery.addEventListener("resize", setQuery);
+  //   setExpanded(query.matches);
+  //   return () => mediaQuery.removeEventListener("resize", setQuery);
+  // }, [mediaQuery]);
+
+  // useEffect(() => {
+  //   setExpanded(query.matches);
+  //   (() => {
+  //     if (expanded !== isToggle) {
+  //       setToggle(true);
+  //     } else {
+  //       localStorage.setItem("SIDEBAR", "close");
+  //     }
+  //   })();
+  // }, [query]);
+
+  // const SIDEBAR = localStorage.getItem("SIDEBAR");
+  // console.log(SIDEBAR === "close");
+
+  const mediaQuery = gsap.matchMedia();
 
   useEffect(() => {
-    mediaQuery.addEventListener("change", setQuery);
-    return () => mediaQuery.removeEventListener("change", setQuery);
-  }, [mediaQuery]);
-
-  useEffect(() => {
-    setExpanded(query.matches);
-    (() => {
-      if (expanded === isToggle) {
-        setToggle(false);
-      }
+    (async () => {
+      await mediaQuery.add(
+        {
+          isDesktop: "(max-width: 990px)",
+        },
+        () => {
+          setToggle(false);
+        }
+      );
     })();
-  }, [query]);
+  }, [mediaQuery]);
 
   return (
     <div className={LNCSS._wrap_left_navigations}>
@@ -70,7 +92,7 @@ export default function Left_Navigtaion() {
       ) : (
         <div className={LNCSS._small_ln_container}>
           <div
-            className={`${LNCSS._toggle_icon_minimize} ${LNCSS._hide_toggle_icon}`}
+            className={`${LNCSS._toggle_icon_minimize}  ${LNCSS._hide_toggle_icon}`}
             onClick={() => setToggle(!isToggle)}
           >
             <AiOutlinePlusSquare size={20} />
