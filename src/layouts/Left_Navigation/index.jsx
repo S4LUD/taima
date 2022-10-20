@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import LNCSS from "./index.module.scss";
 import {
   AiOutlineMinusSquare,
@@ -10,34 +10,9 @@ import {
 export default function Left_Navigtaion() {
   const [isToggle, setToggle] = useState(true);
 
-  // const mediaQuery = window.matchMedia("(min-width: 990px)");
-
-  // const [query, setQuery] = useState(mediaQuery);
-  // const [expanded, setExpanded] = useState(query.matches);
-
-  // useEffect(() => {
-  //   mediaQuery.addEventListener("resize", setQuery);
-  //   setExpanded(query.matches);
-  //   return () => mediaQuery.removeEventListener("resize", setQuery);
-  // }, [mediaQuery]);
-
-  // useEffect(() => {
-  //   setExpanded(query.matches);
-  //   (() => {
-  //     if (expanded !== isToggle) {
-  //       setToggle(true);
-  //     } else {
-  //       localStorage.setItem("SIDEBAR", "close");
-  //     }
-  //   })();
-  // }, [query]);
-
-  // const SIDEBAR = localStorage.getItem("SIDEBAR");
-  // console.log(SIDEBAR === "close");
-
   const mediaQuery = gsap.matchMedia();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       await mediaQuery.add(
         {
