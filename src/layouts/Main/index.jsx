@@ -11,8 +11,10 @@ export default function Main() {
       <Header />
       <div className={RootCSS._root_layout}>
         <Left_Navigtaion />
-        <Outlet />
-        <Right_Navigation />
+        <div className={RootCSS._root_wrap_layout}>
+          <Outlet />
+          <Right_Navigation />
+        </div>
       </div>
     </>
   );

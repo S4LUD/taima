@@ -7,7 +7,7 @@
     padding: 20px;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #f8f8f8;
+    border-right: 1px solid #ececec;
     ._mode_style {
       display: flex;
       justify-content: flex-end;
@@ -78,7 +78,7 @@
   ._small_ln_container {
     min-width: 59px;
     max-width: 59px;
-    border-right: 1px solid #f8f8f8;
+    border-right: 1px solid #ececec;
     ._wrap_m_btn {
       margin-top: 10px;
       ._m_btn {
