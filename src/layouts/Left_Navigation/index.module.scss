@@ -59,13 +59,16 @@
         display: flex;
         flex-direction: column;
         ._btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
           cursor: pointer;
           font-size: 14px;
           padding: 10px;
           border-radius: 5px;
           transition: background 50ms ease-in-out;
           &:hover {
-            background: #f8f8f8;
+            color: #9947ad;
           }
         }
       }
@@ -75,14 +78,29 @@
   ._small_ln_container {
     min-width: 59px;
     max-width: 59px;
-    border: 1px solid #f8f8f8;
+    border-right: 1px solid #f8f8f8;
+    ._wrap_m_btn {
+      margin-top: 10px;
+      ._m_btn {
+        cursor: pointer;
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          color: #9947ad;
+        }
+      }
+    }
     ._toggle_icon_minimize {
       cursor: pointer;
       padding: 10px;
-      background: #d6d6d6;
       display: flex;
       align-items: center;
       justify-content: center;
+      &:hover {
+        color: #9947ad;
+      }
     }
     @media only screen and (max-width: 990px) {
       ._hide_toggle_icon {
