@@ -3,6 +3,8 @@
   user-select: none;
   display: flex;
   flex-direction: column;
+  max-width: 300px;
+  min-width: 300px;
   ._t_p_c_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -23,8 +25,6 @@
   ._comments_container {
     border: 1px solid #ececec;
     border-radius: 5px;
-    max-width: 300px;
-    min-width: 300px;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -64,8 +64,10 @@
 @media only screen and (max-width: 990px) {
   ._rn_container {
     border: none;
-    ._comments_container {
-      min-width: calc(100vw - 99px) !important;
-    }
+    min-width: none;
+    min-width: calc(100vw - 72px) !important;
+    // ._comments_container {
+    // min-width: calc(100vw - 99px) !important;
+    // }
   }
 }
