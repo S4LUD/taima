@@ -74,7 +74,6 @@
       }
     }
   }
-
   ._small_ln_container {
     min-width: 59px;
     max-width: 59px;
@@ -107,5 +106,14 @@
         display: none;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  ._wrap_left_navigations {
+    bottom: 0;
+    left: 0;
+    min-height: calc(100vh - 72px) !important;
+    position: absolute;
   }
 }
