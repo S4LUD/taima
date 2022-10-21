@@ -111,8 +111,10 @@
 
 @media only screen and (max-width: 990px) {
   ._wrap_left_navigations {
-    bottom: 0;
+    top: 0;
     left: 0;
+    bottom: 0;
+    margin-top: 72px;
     min-height: calc(100vh - 72px) !important;
     position: absolute;
   }
