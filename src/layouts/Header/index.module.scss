@@ -85,6 +85,9 @@
         pointer-events: all;
         transform: translateY(0px);
       }
+      ._wrap_plus_btn {
+        display: none;
+      }
       ._wrap_btn_add {
         user-select: none;
         cursor: pointer;
@@ -103,6 +106,19 @@
           font-weight: 400;
         }
       }
+      @media only screen and (max-width: 990px) {
+        ._wrap_btn_add {
+          display: none;
+        }
+        ._wrap_plus_btn {
+          display: block;
+          height: 32px;
+          width: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
     ._profile {
       position: relative;
@@ -119,6 +135,12 @@
         ._arrow {
           display: flex;
           align-items: center;
+        }
+        @media only screen and (max-width: 990px) {
+          img {
+            height: 32px;
+            width: 32px;
+          }
         }
       }
       ._drop_menu {

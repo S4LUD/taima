@@ -8,6 +8,7 @@ import {
   FiSettings,
   BiLogOut,
   MdOutlineWorkspaces,
+  AiOutlinePlusSquare,
 } from "react-icons/all";
 import HeaderCSS from "./index.module.scss";
 import Profile from "../../assets/image/profile.jpg";
@@ -94,6 +95,9 @@ export default function Header() {
           >
             <span className={HeaderCSS._title_plus}>+</span>
             <div>New</div>
+          </div>
+          <div className={HeaderCSS._wrap_plus_btn}>
+            <AiOutlinePlusSquare size={20} />
           </div>
           <div
             className={`${HeaderCSS._wrap_add_drop_menu} ${
