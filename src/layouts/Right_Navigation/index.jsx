@@ -8,7 +8,6 @@ export default function Right_Navigation() {
 
   return (
     <div className={RNCSS._rn_container}>
-      {window.innerWidth}
       <div className={RNCSS._comments_container}>
         <div className={RNCSS._comments_container_title}>
           <AiOutlineFire size={16} /> New comments
