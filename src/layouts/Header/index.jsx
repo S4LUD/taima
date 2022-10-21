@@ -96,7 +96,10 @@ export default function Header() {
             <span className={HeaderCSS._title_plus}>+</span>
             <div>New</div>
           </div>
-          <div className={HeaderCSS._wrap_plus_btn}>
+          <div
+            className={HeaderCSS._wrap_plus_btn}
+            onClick={() => setToggleNew(!isToggleNew)}
+          >
             <AiOutlinePlusSquare size={20} />
           </div>
           <div
