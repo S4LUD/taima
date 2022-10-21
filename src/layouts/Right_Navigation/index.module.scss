@@ -3,37 +3,80 @@
   user-select: none;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
-  min-width: 300px;
-  ._t_p_c_container {
+  max-width: 350px;
+  min-width: 350px;
+  ._schdules_container {
+    padding: 10px;
     display: flex;
-    justify-content: space-evenly;
-    // grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 10px;
-    ._wrap_tpc {
+    flex-direction: column;
+    ._sched_title {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      gap: 5px;
+    }
+    ._sched_container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      min-width: 70px;
-      max-width: 70px;
-      ._tp_count {
-        font-size: 16px;
-        font-weight: 500;
-      }
-      ._tpc_title {
-        text-align: center;
-        font-size: 12px;
+      ._wrap_sched_events {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        ._event_title_date {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: #f1f1f1;
+          padding: 5px 0;
+          min-width: 30px;
+          max-width: 30px;
+          min-height: 45px;
+          max-height: 45px;
+          border-radius: 5px;
+          ._event_title_day {
+            font-size: 16px;
+            font-weight: 500;
+          }
+          ._event_title_month {
+            font-size: 12px;
+          }
+        }
+        ._wrap_event_title {
+          min-width: 0;
+          padding: 0 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          ._event_title {
+            font-size: 14px;
+            font-weight: 500;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          ._full_date {
+            font-size: 12px;
+            font-weight: 500;
+            color: #818181;
+          }
+        }
       }
     }
   }
   ._comments_container {
-    border: 1px solid #ececec;
-    border-radius: 5px;
     height: max-content;
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
+    margin-bottom: 10px;
+    ._empty_coms {
+      padding: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #b9b9b9;
+      text-align: center;
+    }
     ._comments_container_title {
       display: flex;
       align-items: center;
@@ -68,10 +111,6 @@
 @media only screen and (max-width: 990px) {
   ._rn_container {
     border: none;
-    min-width: none;
     min-width: calc(100vw - 59px) !important;
-    // ._comments_container {
-    // min-width: calc(100vw - 99px) !important;
-    // }
   }
 }
